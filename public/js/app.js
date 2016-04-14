@@ -60,7 +60,7 @@
     };
     vm.delete = function(){
       Show.remove({headliner: vm.show.headliner}, function(){
-        $window.location.replace("/");
+        $window.location.replace("/#/shows");
       });
     };
   }
