@@ -53,6 +53,12 @@ app.post("/shows/:headliner", function(req, res){
   });
 });
 
+app.put("/api/shows/:headliner", function(req, res){
+  Show.findOneAndUpdate(req.params, req.body.show, {new: true}).then(function(show){
+    res.json(show);
+  });
+});
+
 app.post("/shows/:headliner/delete", function(req, res){
   Show.findOneAndRemove(req.params).then(function(){
     res.redirect("/shows");
