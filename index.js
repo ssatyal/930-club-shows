@@ -31,6 +31,14 @@ app.get("/shows", function(req, res){
   });
 });
 
+app.get("/shows/:headliner", function(req, res){
+  Show.findOne(req.params).then(function(show){
+    res.render("shows-show", {
+      show: show
+    });
+  });
+});
+
 app.listen(app.get("port"), function(){
   console.log("help, I'm alive");
 });
