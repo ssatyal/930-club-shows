@@ -41,11 +41,9 @@ app.post("/shows", function(req, res){
   });
 });
 
-app.get("/shows/:headliner", function(req, res){
+app.get("/api/shows/:headliner", function(req, res){
   Show.findOne(req.params).then(function(show){
-    res.render("shows-show", {
-      show: show
-    });
+    res.json(show);
   });
 });
 

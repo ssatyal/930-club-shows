@@ -1,10 +1,12 @@
-{{#unless show}}
-  <h2>THAT SHOWS DOES NOT EXIST</h2>
-{{else}}
-<h2>{{show.headliner}}</h2>
+<div data-ng-if="showVM.show">
+<h2>{{showVM.show.headliner}}</h2>
+
+</div>
+
+<p>HELLO MUTHA FUCKA</p>
 
 
-<form action="/shows/{{show.headliner}}" method="post">
+<!-- <form action="/shows/{{show.headliner}}" method="post">
   <input type="text" name="show[headliner]" value="{{show.headliner}}" placeholder="Headliner">
   <input type="text" name="show[supporting_act]" value="{{show.supporting_act}}" placeholder="Supporting Act(s)">
   <input type="text" name="show[date]" value="{{show.date}}" placeholder="Date">
@@ -15,4 +17,9 @@
 <form action="/shows/{{show.headliner}}/delete" method="post">
   <button type="submit">Delete Show</button>
 </form>
-{{/unless}}
+{{/unless}} -->
+
+<!--
+{{#unless show}}
+  <h2>THAT SHOWS DOES NOT EXIST</h2>
+{{else}} -->
