@@ -1,0 +1,37 @@
+[
+  {
+    "headliner": "The Dandy Warhols",
+    "supporting_act": "Seratones",
+    "date": "SUN 4/17",
+    "time": "Doors 7:00 PM",
+    "price": "$25"
+  },
+  {
+    "headliner": "Good Charlotte",
+    "supporting_act": "Waterparks",
+    "date": "WED 4/20",
+    "time": "Doors 7:00 PM",
+    "price": "$30"
+  },
+  {
+    "headliner": "Tokyo Police Club",
+    "supporting_act": "From Indian Lakes",
+    "date": "THU 4/21",
+    "time": "Doors 6:00 PM",
+    "price": "$25"
+  },
+  {
+    "headliner": "Tribal Seeds",
+    "supporting_act": "Fear Nuttin' Band, E.N. Young",
+    "date": "SAT 4/23",
+    "time": "Doors 7:00 PM",
+    "price": "$20"
+  },
+  {
+    "headliner": "Bob Mould",
+    "supporting_act": "Ted Leo (solo)",
+    "date": "WED 4/27",
+    "time": "Doors 7:00 PM",
+    "price": "$25"
+  }
+]
