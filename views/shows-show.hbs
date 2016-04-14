@@ -1,3 +1,6 @@
+{{#unless show}}
+  <h2>THAT SHOWS DOES NOT EXIST</h2>
+{{else}}
 <h2>{{show.headliner}}</h2>
 
 
@@ -9,3 +12,7 @@
   <input type="text" name="show[price]" value="{{show.price}}" placeholder="Price">
   <button type="submit">Edit</button>
 </form>
+<form action="/shows/{{show.headliner}}/delete" method="post">
+  <button type="submit">Delete Show</button>
+</form>
+{{/unless}}

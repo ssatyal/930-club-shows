@@ -52,6 +52,12 @@ app.post("/shows/:headliner", function(req, res){
   });
 });
 
+app.post("/shows/:headliner/delete", function(req, res){
+  Show.findOneAndRemove(req.params).then(function(){
+    res.redirect("/shows");
+  });
+});
+
 app.listen(app.get("port"), function(){
   console.log("help, I'm alive");
 });
