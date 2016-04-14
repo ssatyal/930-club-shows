@@ -39,6 +39,12 @@ app.get("/shows/:headliner", function(req, res){
   });
 });
 
+app.post("/shows/:headliner", function(req, res){
+  Show.findOneAndUpdate(req.params, req.body.show, {new: true}).then(function(show){
+    res.redirect("/shows/" + show.headliner)
+  })
+})
+
 app.listen(app.get("port"), function(){
   console.log("help, I'm alive");
 });

@@ -1,1 +1,11 @@
 <h2>{{show.headliner}}</h2>
+
+
+<form action="/shows/{{show.headliner}}" method="post">
+  <input type="text" name="show[headliner]" value="{{show.headliner}}" placeholder="Headliner">
+  <input type="text" name="show[supporting_act]" value="{{show.supporting_act}}" placeholder="Supporting Act(s)">
+  <input type="text" name="show[date]" value="{{show.date}}" placeholder="Date">
+  <input type="text" name="show[time]" value="{{show.time}}" placeholder="Doors">
+  <input type="text" name="show[price]" value="{{show.price}}" placeholder="Price">
+  <button type="submit">Edit</button>
+</form>
