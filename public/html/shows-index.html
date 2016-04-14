@@ -1,7 +1,8 @@
 <h2>Upcoming Shows</h2>
-
-{{#each shows as |show|}}
-<h3><a href="/shows/{{show.headliner}}">{{show.headliner}} with {{show.supporting_act}}</a></h3>
+<div data-ng-repeat="show in indexVM.shows">
+  <h3><a href="/shows/{{show.headliner}}">{{show.headliner}}</a></h3>
+</div>
+<!-- <h3><a href="/shows/{{show.headliner}}">{{show.headliner}} with {{show.supporting_act}}</a></h3>
 {{/each}}
 
 <h3>Add a Show</h3>
@@ -12,4 +13,4 @@
   <input type="text" name="show[time]" placeholder="Doors">
   <input type="text" name="show[price]" placeholder="Price">
   <button type="submit">Add Show</button>
-</form>
+</form> -->

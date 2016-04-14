@@ -19,15 +19,18 @@ app.use("/assets", express.static("public"));
 app.use(parser.urlencoded({extended: true}));
 app.use(parser.json({extended: true}));
 
-app.get("/", function(req, res){
-  res.redirect("/shows");
-});
 
 app.get("/shows", function(req, res){
   Show.find({}).then(function(shows){
     res.render("shows-index", {
       shows: shows
     });
+  });
+});
+
+app.get("/api/shows", function(req, res){
+  Show.find({}).then(function(shows){
+    res.json(shows);
   });
 });
 
@@ -56,6 +59,10 @@ app.post("/shows/:headliner/delete", function(req, res){
   Show.findOneAndRemove(req.params).then(function(){
     res.redirect("/shows");
   });
+});
+
+app.get("/*", function(req, res){
+  res.render("shows");
 });
 
 app.listen(app.get("port"), function(){
