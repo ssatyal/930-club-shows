@@ -1,6 +1,6 @@
 var express = require("express");
 var hbs = require("express-handlebars");
-var mongoose = require("./db/connection"); //this might come from db/connection
+var mongoose = require("./db/connection");
 var parser = require("body-parser");
 var app = express();
 var Show = mongoose.model("Show");
@@ -59,9 +59,9 @@ app.put("/api/shows/:headliner", function(req, res){
   });
 });
 
-app.post("/shows/:headliner/delete", function(req, res){
+app.delete("/api/shows/:headliner", function(req, res){
   Show.findOneAndRemove(req.params).then(function(){
-    res.redirect("/shows");
+    res.json({success: true});
   });
 });
 
