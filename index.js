@@ -31,6 +31,13 @@ app.get("/shows", function(req, res){
   });
 });
 
+app.post("/shows", function(req, res){
+  console.log(req.body);
+  Show.create(req.body.show).then(function(show){
+    res.redirect("/shows/" + show.headliner);
+  });
+});
+
 app.get("/shows/:headliner", function(req, res){
   Show.findOne(req.params).then(function(show){
     res.render("shows-show", {
@@ -41,9 +48,9 @@ app.get("/shows/:headliner", function(req, res){
 
 app.post("/shows/:headliner", function(req, res){
   Show.findOneAndUpdate(req.params, req.body.show, {new: true}).then(function(show){
-    res.redirect("/shows/" + show.headliner)
-  })
-})
+    res.redirect("/shows/" + show.headliner);
+  });
+});
 
 app.listen(app.get("port"), function(){
   console.log("help, I'm alive");
