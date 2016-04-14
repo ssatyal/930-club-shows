@@ -20,7 +20,15 @@ app.use(parser.urlencoded({extended: true}));
 app.use(parser.json({extended: true}));
 
 app.get("/", function(req, res){
-  res.render("shows-index");
+  res.redirect("/shows");
+});
+
+app.get("/shows", function(req, res){
+  Show.find({}).then(function(shows){
+    res.render("shows-index", {
+      shows: shows
+    });
+  });
 });
 
 app.listen(app.get("port"), function(){
