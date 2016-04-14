@@ -24,6 +24,7 @@
     "Show",
     "$stateParams",
     "$window",
+    "$state",
     showShowCtrl
   ]);
 
@@ -47,14 +48,14 @@
     vm.shows = Show.all;
   };
 
-  function showShowCtrl(Show, $stateParams, $window){
+  function showShowCtrl(Show, $stateParams, $window, $state){
     var vm = this;
     Show.find("headliner", $stateParams.headliner, function(show){
       vm.show = show;
     });
     vm.update = function(){
       Show.update({headliner: vm.show.headliner}, {show: vm.show}, function(){
-        console.log("Done");
+        $state.go("index")
       });
     };
     vm.delete = function(){
